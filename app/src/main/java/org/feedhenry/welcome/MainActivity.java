@@ -223,7 +223,7 @@ import com.feedhenry.sdk.FHActCallback;
 import com.feedhenry.sdk.FHResponse;
 
 import org.feedhenry.welcome.fragments.CloudFragment;
-import org.feedhenry.welcome.fragments.DataBrowerFragment;
+import org.feedhenry.welcome.fragments.DataBrowserFragment;
 import org.feedhenry.welcome.fragments.HomeFragment;
 import org.feedhenry.welcome.fragments.InitFragment;
 import org.feedhenry.welcome.fragments.IntegrationFragment;
@@ -278,7 +278,7 @@ public class MainActivity extends AppCompatActivity {
 						fragment = new LocationFragment();
 						break;
 					case R.id.drawer_data:
-						fragment = new DataBrowerFragment();
+						fragment = new DataBrowserFragment();
 						break;
 					case R.id.drawer_info:
 						fragment = new NativeAppInfoFragment();
@@ -363,7 +363,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	public void navigateToDataBrowser() {
-		navigateTo(new DataBrowerFragment());
+		navigateTo(new DataBrowserFragment());
 	}
 
 }
