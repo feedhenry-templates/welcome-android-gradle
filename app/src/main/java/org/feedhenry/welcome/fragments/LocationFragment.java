@@ -238,16 +238,16 @@ public class LocationFragment extends android.support.v4.app.Fragment {
 
 		toggle = view.findViewById(R.id.weather_toggle);
 
-		weatherIcon = (ImageView) view.findViewById(R.id.weather_icon);
-		weatherDesc = (TextView) view.findViewById(R.id.weather_desc);
-		weatherDate = (TextView) view.findViewById(R.id.weather_date);
-		weatherLow = (TextView) view.findViewById(R.id.weather_low);
-		weatherHigh = (TextView) view.findViewById(R.id.weather_high);
+		weatherIcon = view.findViewById(R.id.weather_icon);
+		weatherDesc = view.findViewById(R.id.weather_desc);
+		weatherDate = view.findViewById(R.id.weather_date);
+		weatherLow = view.findViewById(R.id.weather_low);
+		weatherHigh = view.findViewById(R.id.weather_high);
 
-		final EditText lat = (EditText) view.findViewById(R.id.latitude);
-		final EditText lng = (EditText) view.findViewById(R.id.longitude);
+		final EditText lat = view.findViewById(R.id.latitude);
+		final EditText lng = view.findViewById(R.id.longitude);
 
-		requestButton = (Button) view.findViewById(R.id.get_weather);
+		requestButton = view.findViewById(R.id.get_weather);
 		requestButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {

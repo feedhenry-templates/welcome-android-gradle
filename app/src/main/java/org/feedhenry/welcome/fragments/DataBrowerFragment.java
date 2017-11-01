@@ -229,8 +229,8 @@ public class DataBrowerFragment extends android.support.v4.app.Fragment {
 							 @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_data_browser, container, false);
 
-		dataEditText = (EditText) view.findViewById(R.id.data);
-		requestButton = (Button) view.findViewById(R.id.save);
+		dataEditText = view.findViewById(R.id.data);
+		requestButton = view.findViewById(R.id.save);
 		requestButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {

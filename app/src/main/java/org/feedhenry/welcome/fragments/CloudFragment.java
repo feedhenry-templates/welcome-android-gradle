@@ -231,7 +231,7 @@ public class CloudFragment extends Fragment {
 							 @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_cloud, container, false);
 
-		requestButton = (Button) view.findViewById(R.id.call_cloud);
+		requestButton = view.findViewById(R.id.call_cloud);
 		requestButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -241,7 +241,7 @@ public class CloudFragment extends Fragment {
 
 		toggle = view.findViewById(R.id.cloud_toggle);
 
-		responseTextview = (TextView) view.findViewById(R.id.response);
+		responseTextview = view.findViewById(R.id.response);
 
 		return view;
 	}

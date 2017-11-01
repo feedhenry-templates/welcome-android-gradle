@@ -229,17 +229,17 @@ public class NativeAppInfoFragment extends android.support.v4.app.Fragment {
 							 @Nullable Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_native_app_info, container, false);
 
-		manufactorurer = (TextView) view.findViewById(R.id.device_manufacturer);
-		model = (TextView) view.findViewById(R.id.device_model);
-		product = (TextView) view.findViewById(R.id.device_product);
-		serial = (TextView) view.findViewById(R.id.device_serial);
-		cpu = (TextView) view.findViewById(R.id.device_cpu);
-		host = (TextView) view.findViewById(R.id.device_host);
+		manufactorurer = view.findViewById(R.id.device_manufacturer);
+		model = view.findViewById(R.id.device_model);
+		product = view.findViewById(R.id.device_product);
+		serial = view.findViewById(R.id.device_serial);
+		cpu = view.findViewById(R.id.device_cpu);
+		host = view.findViewById(R.id.device_host);
 
-		appName = (TextView) view.findViewById(R.id.app_name);
-		appDomain = (TextView) view.findViewById(R.id.app_domain);
-		appEnv = (TextView) view.findViewById(R.id.app_env);
-		appPort = (TextView) view.findViewById(R.id.app_port);
+		appName = view.findViewById(R.id.app_name);
+		appDomain = view.findViewById(R.id.app_domain);
+		appEnv = view.findViewById(R.id.app_env);
+		appPort = view.findViewById(R.id.app_port);
 
 		getDeviceInformation();
 		getCouldInformation();
