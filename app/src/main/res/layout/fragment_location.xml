@@ -240,6 +240,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:inputType="numberDecimal"
             android:text="-22.9510"
             tools:ignore="HardcodedText" />
 
@@ -253,6 +254,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:inputType="numberDecimal"
             android:text="-43.2097"
             tools:ignore="HardcodedText" />
     </LinearLayout>
