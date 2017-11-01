@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
 
 
                                      Apache License
@@ -206,23 +205,25 @@
 
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/white"
-              android:orientation="vertical"
-              android:padding="10dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:ignore="Overdraw">
 
     <TextView
         style="@style/text_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/statistics"/>
+        android:text="@string/statistics" />
 
     <TextView
         style="@style/text_body"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/statistics_text"/>
+        android:text="@string/statistics_text" />
 
 </LinearLayout>
