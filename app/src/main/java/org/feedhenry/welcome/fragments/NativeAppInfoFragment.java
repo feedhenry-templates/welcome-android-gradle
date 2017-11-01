@@ -204,23 +204,17 @@
  */
 package org.feedhenry.welcome.fragments;
 
-import android.os.Build;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.os.*;
+import android.support.annotation.*;
+import android.util.*;
+import android.view.*;
+import android.widget.*;
 
-import com.feedhenry.sdk.FH;
-import com.feedhenry.sdk.FHActCallback;
-import com.feedhenry.sdk.FHResponse;
-import com.feedhenry.sdk.api.FHCloudRequest;
+import com.feedhenry.sdk.*;
+import com.feedhenry.sdk.api.*;
 
 import org.feedhenry.welcome.R;
-import org.json.fh.JSONObject;
+import org.json.fh.*;
 
 public class NativeAppInfoFragment extends android.support.v4.app.Fragment {
 

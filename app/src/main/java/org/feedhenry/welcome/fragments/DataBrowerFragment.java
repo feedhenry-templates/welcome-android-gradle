@@ -206,7 +206,6 @@ package org.feedhenry.welcome.fragments;
 
 import android.os.*;
 import android.support.annotation.*;
-import android.support.v4.app.*;
 import android.util.*;
 import android.view.*;
 import android.widget.*;
@@ -217,67 +216,60 @@ import com.feedhenry.sdk.api.*;
 import org.feedhenry.welcome.R;
 import org.json.fh.*;
 
-public class CloudFragment extends Fragment {
+public class DataBrowerFragment extends android.support.v4.app.Fragment {
 
-	private static final String TAG = CloudFragment.class.getSimpleName();
+	private static final String TAG = DataBrowerFragment.class.getSimpleName();
 
 	private Button requestButton;
-	private View toggle;
-	private TextView responseTextview;
+	private EditText dataEditText;
 
 	@Nullable
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
 							 @Nullable Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_cloud, container, false);
+		View view = inflater.inflate(R.layout.fragment_data_browser, container, false);
 
-		requestButton = (Button) view.findViewById(R.id.call_cloud);
+		dataEditText = (EditText) view.findViewById(R.id.data);
+		requestButton = (Button) view.findViewById(R.id.save);
 		requestButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				callCloud();
+				saveData(dataEditText.getText().toString());
 			}
 		});
-
-		toggle = view.findViewById(R.id.cloud_toggle);
-
-		responseTextview = (TextView) view.findViewById(R.id.response);
 
 		return view;
 	}
 
-	private void callCloud() {
+	private void saveData(String data) {
 
 		requestButton.setEnabled(false);
-		toggle.setVisibility(View.INVISIBLE);
 
 		FHActCallback callback = new FHActCallback() {
 			@Override
 			public void success(FHResponse fhResponse) {
-				String response = getString(R.string.response,
-						fhResponse.getJson().getString("text"));
-				responseTextview.setText(response);
-				toggle.setVisibility(View.VISIBLE);
 				requestButton.setEnabled(true);
+				Toast.makeText(getContext(), R.string.data_saved, Toast.LENGTH_LONG).show();
+				dataEditText.setText("");
+				dataEditText.setFocusable(true);
 			}
 
 			@Override
 			public void fail(FHResponse fhResponse) {
 				Log.e(TAG, fhResponse.getErrorMessage(), fhResponse.getError());
-				Toast.makeText(getActivity(), fhResponse.getErrorMessage(),
+				Toast.makeText(getContext(), fhResponse.getErrorMessage(),
 						Toast.LENGTH_SHORT).show();
 				requestButton.setEnabled(true);
 			}
 		};
 
-		JSONObject params = new JSONObject("{}");
+		JSONObject params = new JSONObject("{'collection':'Users', 'document': {data: " + data + "}}");
 
 		try {
-			FHCloudRequest request = FH.buildCloudRequest("hello", "POST", null, params);
+			FHCloudRequest request = FH.buildCloudRequest("saveData", "POST", null, params);
 			request.executeAsync(callback);
 		} catch (Exception e) {
 			Log.e(TAG, e.getMessage(), e);
-			Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
 		}
 
 	}
