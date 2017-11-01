@@ -206,7 +206,6 @@
 -->
 <resources>
     <string name="app_name">Welcome app</string>
-    <string name="error_initialize_app">An error has occurred while trying initialize the application</string>
 
     <!-- Drawer -->
     <string name="home">Home</string>
