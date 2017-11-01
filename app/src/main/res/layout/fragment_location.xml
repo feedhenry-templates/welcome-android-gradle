@@ -276,6 +276,7 @@
             android:id="@+id/weather_icon"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:contentDescription="@string/weather_icon"
             android:src="@drawable/ic_home" />
 
         <LinearLayout

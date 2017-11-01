@@ -252,6 +252,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:contentDescription="@string/cloud_icon"
                 android:src="@drawable/home_cloud"/>
 
             <ImageView
@@ -259,6 +260,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:contentDescription="@string/notification_icon"
                 android:src="@drawable/home_push"/>
 
         </TableRow>
@@ -293,11 +295,13 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_weight="1"
+                android:contentDescription="@string/location_icon"
                 android:src="@drawable/home_location"/>
 
             <ImageView
                 android:id="@+id/data_browser"
                 android:layout_width="100dp"
+                android:contentDescription="@string/browser_icon"
                 android:layout_height="100dp"
                 android:layout_weight="1"
                 android:src="@drawable/home_data"/>

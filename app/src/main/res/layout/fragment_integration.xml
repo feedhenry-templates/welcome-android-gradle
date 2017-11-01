@@ -245,18 +245,21 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:contentDescription="@string/mysql_icon"
                     android:src="@drawable/plugins_mysql"/>
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:contentDescription="@string/oracle_icon"
                     android:src="@drawable/plugins_oracle"/>
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:contentDescription="@string/stripe_icon"
                     android:src="@drawable/plugins_stripe"/>
 
             </TableRow>
@@ -269,18 +272,21 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:contentDescription="@string/loggy_icon"
                     android:src="@drawable/plugins_loggly"/>
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:contentDescription="@string/s3_icon"
                     android:src="@drawable/plugins_s3"/>
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:contentDescription="@string/mixpanel_icon"
                     android:src="@drawable/plugins_mixpanel"/>
 
             </TableRow>
@@ -293,12 +299,14 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:contentDescription="@string/salesforce_icon"
                     android:src="@drawable/plugins_salesforce"/>
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:contentDescription="@string/sendgrid_icon"
                     android:src="@drawable/plugins_sendgrid"/>
 
 
@@ -306,6 +314,7 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:contentDescription="@string/paypal_icon"
                     android:src="@drawable/plugins_paypal"/>
 
             </TableRow>
@@ -318,18 +327,21 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:contentDescription="@string/rabbitmq_icon"
                     android:src="@drawable/plugins_rabbitmq"/>
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:contentDescription="@string/postgresql_icon"
                     android:src="@drawable/plugins_postgresql"/>
 
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:contentDescription="@string/twilio_icon"
                     android:src="@drawable/plugins_twilio"/>
 
             </TableRow>
