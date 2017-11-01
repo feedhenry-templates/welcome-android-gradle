@@ -232,12 +232,7 @@ public class CloudFragment extends Fragment {
 		View view = inflater.inflate(R.layout.fragment_cloud, container, false);
 
 		requestButton = view.findViewById(R.id.call_cloud);
-		requestButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				callCloud();
-			}
-		});
+		requestButton.setOnClickListener(view1 -> callCloud());
 
 		toggle = view.findViewById(R.id.cloud_toggle);
 

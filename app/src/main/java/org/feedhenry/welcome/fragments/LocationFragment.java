@@ -248,12 +248,7 @@ public class LocationFragment extends android.support.v4.app.Fragment {
 		final EditText lng = view.findViewById(R.id.longitude);
 
 		requestButton = view.findViewById(R.id.get_weather);
-		requestButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				getWeather(lat.getText().toString(), lng.getText().toString());
-			}
-		});
+		requestButton.setOnClickListener(view1 -> getWeather(lat.getText().toString(), lng.getText().toString()));
 
 		return view;
 	}

@@ -231,12 +231,7 @@ public class DataBrowerFragment extends android.support.v4.app.Fragment {
 
 		dataEditText = view.findViewById(R.id.data);
 		requestButton = view.findViewById(R.id.save);
-		requestButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				saveData(dataEditText.getText().toString());
-			}
-		});
+		requestButton.setOnClickListener(view1 -> saveData(dataEditText.getText().toString()));
 
 		return view;
 	}

@@ -222,36 +222,16 @@ public class HomeFragment extends Fragment {
 		final MainActivity activity = (MainActivity) getActivity();
 
 		View callCloud = view.findViewById(R.id.call_cloud);
-		callCloud.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				activity.navigateToCallCloud();
-			}
-		});
+		callCloud.setOnClickListener(view14 -> activity.navigateToCallCloud());
 
 		View pushNotification = view.findViewById(R.id.push_notification);
-		pushNotification.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				activity.navigateToPushNotification();
-			}
-		});
+		pushNotification.setOnClickListener(view13 -> activity.navigateToPushNotification());
 
 		View location = view.findViewById(R.id.location);
-		location.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				activity.navigateToLocation();
-			}
-		});
+		location.setOnClickListener(view12 -> activity.navigateToLocation());
 
 		View dataBrowser = view.findViewById(R.id.data_browser);
-		dataBrowser.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				activity.navigateToDataBrowser();
-			}
-		});
+		dataBrowser.setOnClickListener(view1 -> activity.navigateToDataBrowser());
 
 		return view;
 	}

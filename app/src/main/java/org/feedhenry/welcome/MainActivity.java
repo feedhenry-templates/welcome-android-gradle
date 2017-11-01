@@ -204,9 +204,7 @@
 package org.feedhenry.welcome;
 
 import android.os.*;
-import android.support.annotation.*;
 import android.support.design.widget.*;
-import android.support.design.widget.NavigationView.*;
 import android.support.v4.app.*;
 import android.support.v4.view.*;
 import android.support.v4.widget.*;
@@ -246,51 +244,48 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
 
         NavigationView navigationView = findViewById(R.id.navigation_view);
-        navigationView.setNavigationItemSelectedListener(new OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        navigationView.setNavigationItemSelectedListener(menuItem -> {
 
-                Fragment fragment = null;
+            Fragment fragment = null;
 
-                switch (menuItem.getItemId()) {
-                    case R.id.drawer_home:
-                        fragment = new HomeFragment();
-                        break;
-                    case R.id.drawer_cloud:
-                        fragment = new CloudFragment();
-                        break;
-                    case R.id.drawer_push:
-                        fragment = new PushFragment();
-                        break;
-                    case R.id.drawer_location:
-                        fragment = new LocationFragment();
-                        break;
-                    case R.id.drawer_data:
-                        fragment = new DataBrowserFragment();
-                        break;
-                    case R.id.drawer_info:
-                        fragment = new NativeAppInfoFragment();
-                        break;
-                    case R.id.drawer_integration:
-                        fragment = new IntegrationFragment();
-                        break;
-                    case R.id.drawer_statistics:
-                        fragment = new StatisticsFragment();
-                        break;
-                }
-
-                if (fragment != null) {
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    fragmentManager.beginTransaction()
-                            .replace(R.id.content, fragment)
-                            .commit();
-
-                    menuItem.setChecked(true);
-                }
-
-                drawerLayout.closeDrawers();
-                return true;
+            switch (menuItem.getItemId()) {
+                case R.id.drawer_home:
+                    fragment = new HomeFragment();
+                    break;
+                case R.id.drawer_cloud:
+                    fragment = new CloudFragment();
+                    break;
+                case R.id.drawer_push:
+                    fragment = new PushFragment();
+                    break;
+                case R.id.drawer_location:
+                    fragment = new LocationFragment();
+                    break;
+                case R.id.drawer_data:
+                    fragment = new DataBrowerFragment();
+                    break;
+                case R.id.drawer_info:
+                    fragment = new NativeAppInfoFragment();
+                    break;
+                case R.id.drawer_integration:
+                    fragment = new IntegrationFragment();
+                    break;
+                case R.id.drawer_statistics:
+                    fragment = new StatisticsFragment();
+                    break;
             }
+
+            if (fragment != null) {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.content, fragment)
+                        .commit();
+
+                menuItem.setChecked(true);
+            }
+
+            drawerLayout.closeDrawers();
+            return true;
         });
 
     }
