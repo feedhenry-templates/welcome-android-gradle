@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
 
 
                                      Apache License
@@ -206,18 +205,18 @@
 
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              android:padding="10dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <TextView
         style="@style/text_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/about_this_device"/>
+        android:text="@string/about_this_device" />
 
     <TableLayout
         android:layout_width="match_parent"
@@ -230,14 +229,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/manufacturer"/>
+                android:text="@string/manufacturer" />
 
             <TextView
                 android:id="@+id/device_manufacturer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                tools:text="unknown"/>
+                android:layout_marginStart="10dp"
+                tools:text="unknown" />
 
         </TableRow>
 
@@ -248,14 +248,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/model"/>
+                android:text="@string/model" />
 
             <TextView
                 android:id="@+id/device_model"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                tools:text="Nexus 5"/>
+                tools:text="Nexus 5"
+                android:layout_marginStart="10dp" />
 
         </TableRow>
 
@@ -266,14 +267,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/product"/>
+                android:text="@string/product" />
 
             <TextView
                 android:id="@+id/device_product"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                tools:text="vbox86p"/>
+                tools:text="vbox86p"
+                android:layout_marginStart="10dp" />
 
         </TableRow>
 
@@ -284,14 +286,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/serial"/>
+                android:text="@string/serial" />
 
             <TextView
                 android:id="@+id/device_serial"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                tools:text="unknown"/>
+                tools:text="unknown"
+                android:layout_marginStart="10dp" />
 
 
         </TableRow>
@@ -303,14 +306,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cpu"/>
+                android:text="@string/cpu" />
 
             <TextView
                 android:id="@+id/device_cpu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                tools:text="x86"/>
+                tools:text="x86"
+                android:layout_marginStart="10dp" />
 
         </TableRow>
 
@@ -321,12 +325,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/host"/>
+                android:text="@string/host" />
 
             <TextView
                 android:id="@+id/device_host"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
         </TableRow>
 
@@ -337,7 +341,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/the_could_host"/>
+        android:text="@string/the_could_host" />
 
     <TableLayout
         android:layout_width="match_parent"
@@ -350,14 +354,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cloud_app_name"/>
+                android:text="@string/cloud_app_name" />
 
             <TextView
                 android:id="@+id/app_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                tools:text="aerogear-t-xasdoijaouheriaerihaeir-dev"/>
+                tools:text="aerogear-t-xasdoijaouheriaerihaeir-dev"
+                android:layout_marginStart="10dp" />
 
         </TableRow>
 
@@ -368,14 +373,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cloud_domain"/>
+                android:text="@string/cloud_domain" />
 
             <TextView
                 android:id="@+id/app_domain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                tools:text="aerogear-t"/>
+                tools:text="aerogear-t"
+                android:layout_marginStart="10dp" />
 
         </TableRow>
 
@@ -386,14 +392,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cloud_env"/>
+                android:text="@string/cloud_env" />
 
             <TextView
                 android:id="@+id/app_env"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                tools:text="dev"/>
+                tools:text="dev"
+                android:layout_marginStart="10dp" />
 
         </TableRow>
 
@@ -404,14 +411,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cloud_port"/>
+                android:text="@string/cloud_port" />
 
             <TextView
                 android:id="@+id/app_port"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                tools:text="8180"/>
+                tools:text="8180"
+                android:layout_marginStart="10dp" />
 
         </TableRow>
 
