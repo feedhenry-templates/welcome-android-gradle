@@ -204,6 +204,7 @@
 package org.feedhenry.welcome;
 
 import android.os.*;
+import android.support.annotation.*;
 import android.support.design.widget.*;
 import android.support.design.widget.NavigationView.*;
 import android.support.v4.app.*;
@@ -247,7 +248,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(new OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(MenuItem menuItem) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
                 Fragment fragment = null;
 
