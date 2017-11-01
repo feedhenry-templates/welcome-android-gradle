@@ -241,7 +241,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="-22.9510"/>
+            android:text="-22.9510"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -253,7 +254,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="-43.2097"/>
+            android:text="-43.2097"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 
     <Button
