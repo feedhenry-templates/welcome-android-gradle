@@ -233,7 +233,7 @@ public class NativeAppInfoFragment extends android.support.v4.app.Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
 							 @Nullable Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_native_app_info, null);
+		View view = inflater.inflate(R.layout.fragment_native_app_info, container, false);
 
 		manufactorurer = (TextView) view.findViewById(R.id.device_manufacturer);
 		model = (TextView) view.findViewById(R.id.device_model);

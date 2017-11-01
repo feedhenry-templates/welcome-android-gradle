@@ -218,6 +218,6 @@ public class IntegrationFragment extends android.support.v4.app.Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
 							 @Nullable Bundle savedInstanceState) {
-		return inflater.inflate(R.layout.fragment_integration, null);
+		return inflater.inflate(R.layout.fragment_integration, container, false);
 	}
 }

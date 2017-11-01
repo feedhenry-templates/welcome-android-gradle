@@ -243,7 +243,7 @@ public class LocationFragment extends android.support.v4.app.Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
 							 @Nullable Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_location, null);
+		View view = inflater.inflate(R.layout.fragment_location, container, false);
 
 		toggle = view.findViewById(R.id.weather_toggle);
 

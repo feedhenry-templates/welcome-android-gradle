@@ -217,7 +217,8 @@ public class InitFragment extends Fragment {
 
 	@Nullable
 	@Override
-	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		return inflater.inflate(R.layout.fragment_init, null);
+	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
+							 @Nullable Bundle savedInstanceState) {
+		return inflater.inflate(R.layout.fragment_init, container, false);
 	}
 }

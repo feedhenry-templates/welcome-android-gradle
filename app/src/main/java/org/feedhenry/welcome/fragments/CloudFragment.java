@@ -236,7 +236,7 @@ public class CloudFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
 							 @Nullable Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_cloud, null);
+		View view = inflater.inflate(R.layout.fragment_cloud, container, false);
 
 		requestButton = (Button) view.findViewById(R.id.call_cloud);
 		requestButton.setOnClickListener(new View.OnClickListener() {

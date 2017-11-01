@@ -221,7 +221,7 @@ public class HomeFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
 							 @Nullable Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_home, null);
+		View view = inflater.inflate(R.layout.fragment_home, container, false);
 
 		final MainActivity activity = (MainActivity) getActivity();
 
