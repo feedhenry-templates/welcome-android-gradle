@@ -263,7 +263,7 @@ public class MainActivity extends AppCompatActivity {
                     fragment = new LocationFragment();
                     break;
                 case R.id.drawer_data:
-                    fragment = new DataBrowerFragment();
+                    fragment = new DataBrowserFragment();
                     break;
                 case R.id.drawer_info:
                     fragment = new NativeAppInfoFragment();
