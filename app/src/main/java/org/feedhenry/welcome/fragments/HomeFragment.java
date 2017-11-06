@@ -222,16 +222,16 @@ public class HomeFragment extends Fragment {
 		final MainActivity activity = (MainActivity) getActivity();
 
 		View callCloud = view.findViewById(R.id.call_cloud);
-		callCloud.setOnClickListener(view14 -> activity.navigateToCallCloud());
+		callCloud.setOnClickListener(v -> activity.navigateToCallCloud());
 
 		View pushNotification = view.findViewById(R.id.push_notification);
-		pushNotification.setOnClickListener(view13 -> activity.navigateToPushNotification());
+		pushNotification.setOnClickListener(v -> activity.navigateToPushNotification());
 
 		View location = view.findViewById(R.id.location);
-		location.setOnClickListener(view12 -> activity.navigateToLocation());
+		location.setOnClickListener(v -> activity.navigateToLocation());
 
 		View dataBrowser = view.findViewById(R.id.data_browser);
-		dataBrowser.setOnClickListener(view1 -> activity.navigateToDataBrowser());
+		dataBrowser.setOnClickListener(v -> activity.navigateToDataBrowser());
 
 		return view;
 	}
