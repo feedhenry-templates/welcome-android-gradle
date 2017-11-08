@@ -206,7 +206,6 @@
 -->
 <resources>
     <string name="app_name">Welcome app</string>
-    <string name="error_initialize_app">An error has occurred while trying initialize the application</string>
 
     <!-- Drawer -->
     <string name="home">Home</string>
@@ -261,6 +260,23 @@
 
     <!-- Statistics -->
     <string name="statistics_text">In addition to all of our app install/usage analytics, you can also instrument your cloud code to see exactly how it\'s performing. Go to the stats section of the Studio and see if your device has been detected</string>
+    <string name="cloud_icon">Cloud icon</string>
+    <string name="notification_icon">notification icon</string>
+    <string name="browser_icon">browser icon</string>
+    <string name="location_icon">location icon</string>
+    <string name="mysql_icon">mySQL icon</string>
+    <string name="oracle_icon">oracle icon</string>
+    <string name="stripe_icon">stripe icon</string>
+    <string name="loggy_icon">loggy icon</string>
+    <string name="s3_icon">s3 icon</string>
+    <string name="mixpanel_icon">mixpanel icon</string>
+    <string name="salesforce_icon">salesforce icon</string>
+    <string name="sendgrid_icon">sendgrid icon</string>
+    <string name="paypal_icon">paypal icon</string>
+    <string name="rabbitmq_icon">rabbitmq icon</string>
+    <string name="postgresql_icon">postgresql icon</string>
+    <string name="twilio_icon">twilio icon</string>
+    <string name="weather_icon">weather icon</string>
 
 </resources>
 

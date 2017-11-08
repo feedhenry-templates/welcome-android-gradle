@@ -204,166 +204,150 @@
  */
 package org.feedhenry.welcome;
 
-import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.NavigationView.OnNavigationItemSelectedListener;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+import android.os.*;
+import android.support.design.widget.*;
+import android.support.v4.app.*;
+import android.support.v4.view.*;
+import android.support.v4.widget.*;
+import android.support.v7.app.*;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.MenuItem;
-import android.widget.Toast;
+import android.util.*;
+import android.view.*;
+import android.widget.*;
 
-import com.feedhenry.sdk.FH;
-import com.feedhenry.sdk.FHActCallback;
-import com.feedhenry.sdk.FHResponse;
+import com.feedhenry.sdk.*;
 
-import org.feedhenry.welcome.fragments.CloudFragment;
-import org.feedhenry.welcome.fragments.DataBrowserFragment;
-import org.feedhenry.welcome.fragments.HomeFragment;
-import org.feedhenry.welcome.fragments.InitFragment;
-import org.feedhenry.welcome.fragments.IntegrationFragment;
-import org.feedhenry.welcome.fragments.LocationFragment;
-import org.feedhenry.welcome.fragments.NativeAppInfoFragment;
-import org.feedhenry.welcome.fragments.PushFragment;
-import org.feedhenry.welcome.fragments.StatisticsFragment;
+import org.feedhenry.welcome.fragments.*;
 
 public class MainActivity extends AppCompatActivity {
 
-	private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = MainActivity.class.getSimpleName();
 
-	private DrawerLayout drawerLayout;
+    private DrawerLayout drawerLayout;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-		// -- Toolbar
-		final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-		setSupportActionBar(toolbar);
+        // -- Toolbar
+        final Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-		// -- Actionbar
-		final ActionBar actionBar = getSupportActionBar();
-		if (actionBar != null) {
-			actionBar.setHomeAsUpIndicator(R.drawable.ic_drawer);
-			actionBar.setDisplayHomeAsUpEnabled(true);
-		}
+        // -- Actionbar
+        final ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_drawer);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
-		// -- Drawer & NavigationView
-		drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        // -- Drawer & NavigationView
+        drawerLayout = findViewById(R.id.drawer_layout);
 
-		NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
-		navigationView.setNavigationItemSelectedListener(new OnNavigationItemSelectedListener() {
-			@Override
-			public boolean onNavigationItemSelected(MenuItem menuItem) {
+        NavigationView navigationView = findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(menuItem -> {
 
-				Fragment fragment = null;
+            Fragment fragment = null;
 
-				switch (menuItem.getItemId()) {
-					case R.id.drawer_home:
-						fragment = new HomeFragment();
-						break;
-					case R.id.drawer_cloud:
-						fragment = new CloudFragment();
-						break;
-					case R.id.drawer_push:
-						fragment = new PushFragment();
-						break;
-					case R.id.drawer_location:
-						fragment = new LocationFragment();
-						break;
-					case R.id.drawer_data:
-						fragment = new DataBrowserFragment();
-						break;
-					case R.id.drawer_info:
-						fragment = new NativeAppInfoFragment();
-						break;
-					case R.id.drawer_integration:
-						fragment = new IntegrationFragment();
-						break;
-					case R.id.drawer_statistics:
-						fragment = new StatisticsFragment();
-						break;
-				}
+            switch (menuItem.getItemId()) {
+                case R.id.drawer_home:
+                    fragment = new HomeFragment();
+                    break;
+                case R.id.drawer_cloud:
+                    fragment = new CloudFragment();
+                    break;
+                case R.id.drawer_push:
+                    fragment = new PushFragment();
+                    break;
+                case R.id.drawer_location:
+                    fragment = new LocationFragment();
+                    break;
+                case R.id.drawer_data:
+                    fragment = new DataBrowserFragment();
+                    break;
+                case R.id.drawer_info:
+                    fragment = new NativeAppInfoFragment();
+                    break;
+                case R.id.drawer_integration:
+                    fragment = new IntegrationFragment();
+                    break;
+                case R.id.drawer_statistics:
+                    fragment = new StatisticsFragment();
+                    break;
+            }
 
-				if (fragment != null) {
-					FragmentManager fragmentManager = getSupportFragmentManager();
-					fragmentManager.beginTransaction()
-							.replace(R.id.content, fragment)
-							.commit();
+            if (fragment != null) {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.content, fragment)
+                        .commit();
 
-					menuItem.setChecked(true);
-				}
+                menuItem.setChecked(true);
+            }
 
-				drawerLayout.closeDrawers();
-				return true;
-			}
-		});
+            drawerLayout.closeDrawers();
+            return true;
+        });
 
-	}
+    }
 
-	@Override
-	protected void onStart() {
-		super.onStart();
+    @Override
+    protected void onStart() {
+        super.onStart();
 
-		getSupportFragmentManager()
-				.beginTransaction()
-				.replace(R.id.content, new InitFragment())
-				.commit();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.content, new InitFragment())
+                .commit();
 
-		FH.init(getApplicationContext(), new FHActCallback() {
-			@Override
-			public void success(FHResponse fhResponse) {
-				navigateTo(new HomeFragment());
-			}
+        FH.init(getApplicationContext(), new FHActCallback() {
+            @Override
+            public void success(FHResponse fhResponse) {
+                navigateTo(new HomeFragment());
+            }
 
-			@Override
-			public void fail(FHResponse fhResponse) {
-				Log.d(TAG, "init - fail");
-				Log.e(TAG, fhResponse.getErrorMessage(), fhResponse.getError());
-				Toast.makeText(getApplicationContext(), fhResponse.getErrorMessage(),
-						Toast.LENGTH_SHORT).show();
-				finish();
-			}
-		});
-	}
+            @Override
+            public void fail(FHResponse fhResponse) {
+                Log.d(TAG, "init - fail");
+                Log.e(TAG, fhResponse.getErrorMessage(), fhResponse.getError());
+                Toast.makeText(getApplicationContext(), fhResponse.getErrorMessage(),
+                        Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
+    }
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-			case android.R.id.home:
-				drawerLayout.openDrawer(GravityCompat.START);
-				return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                drawerLayout.openDrawer(GravityCompat.START);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
-	private void navigateTo(Fragment fragment) {
-		getSupportFragmentManager()
-				.beginTransaction()
-				.replace(R.id.content, fragment)
-				.commit();
-	}
+    private void navigateTo(Fragment fragment) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.content, fragment)
+                .commit();
+    }
 
-	public void navigateToCallCloud() {
-		navigateTo(new CloudFragment());
-	}
+    public void navigateToCallCloud() {
+        navigateTo(new CloudFragment());
+    }
 
-	public void navigateToPushNotification() {
-		navigateTo(new PushFragment());
-	}
+    public void navigateToPushNotification() {
+        navigateTo(new PushFragment());
+    }
 
-	public void navigateToLocation() {
-		navigateTo(new LocationFragment());
-	}
+    public void navigateToLocation() {
+        navigateTo(new LocationFragment());
+    }
 
-	public void navigateToDataBrowser() {
-		navigateTo(new DataBrowserFragment());
-	}
+    public void navigateToDataBrowser() {
+        navigateTo(new DataBrowserFragment());
+    }
 
 }

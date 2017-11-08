@@ -204,13 +204,11 @@
  */
 package org.feedhenry.welcome.fragments;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.os.*;
+import android.support.annotation.*;
+import android.view.*;
 
-import org.feedhenry.welcome.R;
+import org.feedhenry.welcome.*;
 
 public class IntegrationFragment extends android.support.v4.app.Fragment {
 
@@ -218,6 +216,6 @@ public class IntegrationFragment extends android.support.v4.app.Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
 							 @Nullable Bundle savedInstanceState) {
-		return inflater.inflate(R.layout.fragment_integration, null);
+		return inflater.inflate(R.layout.fragment_integration, container, false);
 	}
 }

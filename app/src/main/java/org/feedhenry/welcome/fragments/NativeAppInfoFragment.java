@@ -204,23 +204,17 @@
  */
 package org.feedhenry.welcome.fragments;
 
-import android.os.Build;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.os.*;
+import android.support.annotation.*;
+import android.util.*;
+import android.view.*;
+import android.widget.*;
 
-import com.feedhenry.sdk.FH;
-import com.feedhenry.sdk.FHActCallback;
-import com.feedhenry.sdk.FHResponse;
-import com.feedhenry.sdk.api.FHCloudRequest;
+import com.feedhenry.sdk.*;
+import com.feedhenry.sdk.api.*;
 
 import org.feedhenry.welcome.R;
-import org.json.fh.JSONObject;
+import org.json.fh.*;
 
 public class NativeAppInfoFragment extends android.support.v4.app.Fragment {
 
@@ -233,19 +227,19 @@ public class NativeAppInfoFragment extends android.support.v4.app.Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
 							 @Nullable Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_native_app_info, null);
+		View view = inflater.inflate(R.layout.fragment_native_app_info, container, false);
 
-		manufactorurer = (TextView) view.findViewById(R.id.device_manufacturer);
-		model = (TextView) view.findViewById(R.id.device_model);
-		product = (TextView) view.findViewById(R.id.device_product);
-		serial = (TextView) view.findViewById(R.id.device_serial);
-		cpu = (TextView) view.findViewById(R.id.device_cpu);
-		host = (TextView) view.findViewById(R.id.device_host);
+		manufactorurer = view.findViewById(R.id.device_manufacturer);
+		model = view.findViewById(R.id.device_model);
+		product = view.findViewById(R.id.device_product);
+		serial = view.findViewById(R.id.device_serial);
+		cpu = view.findViewById(R.id.device_cpu);
+		host = view.findViewById(R.id.device_host);
 
-		appName = (TextView) view.findViewById(R.id.app_name);
-		appDomain = (TextView) view.findViewById(R.id.app_domain);
-		appEnv = (TextView) view.findViewById(R.id.app_env);
-		appPort = (TextView) view.findViewById(R.id.app_port);
+		appName = view.findViewById(R.id.app_name);
+		appDomain = view.findViewById(R.id.app_domain);
+		appEnv = view.findViewById(R.id.app_env);
+		appPort = view.findViewById(R.id.app_port);
 
 		getDeviceInformation();
 		getCouldInformation();

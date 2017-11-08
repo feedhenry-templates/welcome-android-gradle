@@ -204,16 +204,12 @@
  */
 package org.feedhenry.welcome.fragments;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.os.*;
+import android.support.annotation.*;
+import android.support.v4.app.*;
+import android.view.*;
 
-import org.feedhenry.welcome.MainActivity;
-import org.feedhenry.welcome.R;
+import org.feedhenry.welcome.*;
 
 public class HomeFragment extends Fragment {
 
@@ -221,41 +217,21 @@ public class HomeFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
 							 @Nullable Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_home, null);
+		View view = inflater.inflate(R.layout.fragment_home, container, false);
 
 		final MainActivity activity = (MainActivity) getActivity();
 
 		View callCloud = view.findViewById(R.id.call_cloud);
-		callCloud.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				activity.navigateToCallCloud();
-			}
-		});
+		callCloud.setOnClickListener(v -> activity.navigateToCallCloud());
 
 		View pushNotification = view.findViewById(R.id.push_notification);
-		pushNotification.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				activity.navigateToPushNotification();
-			}
-		});
+		pushNotification.setOnClickListener(v -> activity.navigateToPushNotification());
 
 		View location = view.findViewById(R.id.location);
-		location.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				activity.navigateToLocation();
-			}
-		});
+		location.setOnClickListener(v -> activity.navigateToLocation());
 
 		View dataBrowser = view.findViewById(R.id.data_browser);
-		dataBrowser.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				activity.navigateToDataBrowser();
-			}
-		});
+		dataBrowser.setOnClickListener(v -> activity.navigateToDataBrowser());
 
 		return view;
 	}

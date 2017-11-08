@@ -204,25 +204,18 @@
  */
 package org.feedhenry.welcome.fragments;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.os.*;
+import android.support.annotation.*;
+import android.support.v4.app.*;
+import android.util.*;
+import android.view.*;
+import android.widget.*;
 
-import com.feedhenry.sdk.FH;
-import com.feedhenry.sdk.FHActCallback;
-import com.feedhenry.sdk.FHResponse;
-import com.feedhenry.sdk.api.FHCloudRequest;
+import com.feedhenry.sdk.*;
+import com.feedhenry.sdk.api.*;
 
 import org.feedhenry.welcome.R;
-import org.json.fh.JSONObject;
+import org.json.fh.*;
 
 public class CloudFragment extends Fragment {
 
@@ -236,19 +229,14 @@ public class CloudFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
 							 @Nullable Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_cloud, null);
+		View view = inflater.inflate(R.layout.fragment_cloud, container, false);
 
-		requestButton = (Button) view.findViewById(R.id.call_cloud);
-		requestButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				callCloud();
-			}
-		});
+		requestButton = view.findViewById(R.id.call_cloud);
+		requestButton.setOnClickListener(view1 -> callCloud());
 
 		toggle = view.findViewById(R.id.cloud_toggle);
 
-		responseTextview = (TextView) view.findViewById(R.id.response);
+		responseTextview = view.findViewById(R.id.response);
 
 		return view;
 	}
